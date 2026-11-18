@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <center>
+        <h1>Calculator</h1>
+        <br><br><br>
+        <div id="main">
+            <div id="screen"></div>
+            <div id="btns">
+                <button onclick="allClear()" style="background-color: #7138B8">AC</button>
+                <button onclick="clearDigit()" style="background-color: #7138B8">C</button>
+                <button onclick="addkey('%')" style="background-color: #7138B8">%</button>
+                <button onclick="addkey('/')" style="background-color: #7138B8">&divide</button>
+
+                <button onclick="addkey(7)">7</button>
+                <button onclick="addkey(8)">8</button>
+                <button onclick="addkey(9)">9</button>
+                <button onclick="addkey('*')" style="background-color: #7138B8">&times</button>
+
+                <button onclick="addkey(4)">4</button>
+                <button onclick="addkey(5)">5</button>
+                <button onclick="addkey(6)">6</button>
+                <button onclick="addkey('-')" style="background-color: #7138B8">-</button>
+
+                <button onclick="addkey(1)">1</button>
+                <button onclick="addkey(2)">2</button>
+                <button onclick="addkey(3)">3</button>
+                <button onclick="addkey('+')" style="background-color: #7138B8">+</button>
+
+                <button onclick="addkey('00')">00</button>
+                <button onclick="addkey(0)">0</button>
+                <button onclick="addkey('.')">.</button>
+                <button onclick="Calculate('=')" style="background-color: #9747E8">=</button>
+            </div>
+        </div>
+    </center>
+    <script>
+         const screen= document.getElementById("screen");
+        function addkey(key){
+            screen.innerHTML = screen.innerHTML + key;
+        }
+        function Calculate(){
+            screen.innerHTML = eval(screen.innerHTML);
+        }
+        function allClear(){
+            window.location = "index.html"
+        }
+        function clearDigit(){
+            screen.innerHTML = screen.innerHTML.slice(0,(screen.innerHTML.length)-1);
+        }
+    </script>
+</body>
+</html>
